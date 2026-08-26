@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.9rem;
+
+    --background: #2e2418;
+    --foreground: #f5ead0;
+    --card: #443a2c;
+    --card-foreground: #f5ead0;
+    --primary: #e8b86d;
+    --primary-foreground: #2e2418;
+    --secondary: #5a4a38;
+    --secondary-foreground: #f2e6cc;
+    --muted: #4d4030;
+    --muted-foreground: #c4a878;
+    --accent: #4ade80;
+    --accent-foreground: #1a2e10;
+    --destructive: #dc2626;
+    --destructive-foreground: #fef2f2;
+    --border: #6b553d;
+    --input: #5a4a38;
+    --ring: #f0c987;
+
+    --dirt: #8b6b45;
+    --dirt-deep: #3d2e1c;
+    --grass: #5cb03a;
+    --sky: #7ec8f0;
+    --gold: #ffd166;
+    --gold-foreground: #3d2e1c;
+    --hp: #e63946;
+    --gem: #3fa9e8;
+
+    --gradient-sky: linear-gradient(180deg, #7ec8f0, #a7e3fb);
+    --gradient-dirt: linear-gradient(180deg, #8b6b45, #2e2418);
+    --gradient-gold: linear-gradient(180deg, #ffe9a8, #e8b86d);
+    --shadow-panel: 0 18px 0 -4px rgba(20, 12, 6, 0.75), 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+    --shadow-chunky: 0 6px 0 0 #6b553d, 0 10px 18px -6px rgba(0, 0, 0, 0.6);
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Baloo 2", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .panel {
+    background: var(--card);
+    border: 3px solid var(--border);
+    border-radius: calc(var(--radius) + 8px);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .chunky {
+    box-shadow: var(--shadow-chunky);
+    transition:
+      transform 0.08s ease,
+      box-shadow 0.08s ease;
+  }
+
+  .chunky:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 0 #6b553d;
+  }
+
+  .title-outline {
+    -webkit-text-stroke: 6px #2e1c10;
+    paint-order: stroke fill;
+  }
+
+  .font-display {
+    font-family: "Baloo 2", system-ui, sans-serif;
+  }
+
+  .font-pixel {
+    font-family: "Press Start 2P", monospace;
+  }
+}
